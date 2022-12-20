@@ -6,7 +6,7 @@ const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 // create actions for loadBooks, addBook, removeBook
 export const loadBooks = () => ({ type: LOAD_BOOKS });
 export const addBook = (book) => ({ type: ADD_BOOK, book });
-export const removeBook = (title) => ({ type: REMOVE_BOOK, title });
+export const removeBook = (ID) => ({ type: REMOVE_BOOK, ID });
 
 // create reducer functions and cases to LOAD_BOOKS, ADD_BOOK, REMOVE_BOOK
 export default function reducer(state = [], action) {
@@ -24,7 +24,7 @@ export default function reducer(state = [], action) {
     case REMOVE_BOOK:
       return {
         load: false,
-        books: state.books.filter((book) => book.title !== action.title),
+        books: state.books.filter((book) => book.ID !== action.ID),
       };
     default:
       return state;
