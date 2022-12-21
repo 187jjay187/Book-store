@@ -11,7 +11,7 @@ export const addCategory = (category) => ({ type: ADD_CATEGORY, category });
 export const removeCategory = (category) => ({ type: REMOVE_CATEGORY, category });
 
 // create reducer functions and cases to LOAD_CATEGORIES, STATUS, ADD_CATEGORY, REMOVE_CATEGORY
-export default function reducer(state = [], action) {
+export default function reducer(state = { load: false, categories: [] }, action) {
   switch (action.type) {
     case LOAD_CATEGORIES:
       return {
@@ -28,7 +28,7 @@ export default function reducer(state = [], action) {
     case REMOVE_CATEGORY:
       return {
         load: false,
-        categories: state.categories.filter((category) => category !== action.category),
+        categories: [...state.categories.filter((category) => category !== action.category)],
       };
     default:
       return state;
