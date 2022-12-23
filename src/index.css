@@ -2,6 +2,7 @@
 
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
@@ -22,6 +23,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: whitesmoke;
 }
 
 code {
@@ -32,4 +34,12 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 50px auto;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
 }

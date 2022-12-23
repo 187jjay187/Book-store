@@ -1,0 +1,56 @@
+.add_book {
+  padding: 60px;
+}
+
+.add_book h2 {
+  color: gray;
+  padding-top: 50px;
+  margin-bottom: 15px;
+  border-top: 2px solid lightgray;
+}
+
+.add_book form {
+  display: flex;
+}
+
+.add_book input,
+.add_book select {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  margin-right: 5px;
+  outline: none;
+}
+
+.add_book select {
+  flex: 0.2;
+}
+
+.add_book input:focus,
+.add_book select:focus {
+  /* stylelint-disable-next-line color-hex-case */
+  border: 1px solid #339AF0;
+}
+
+.add_book input[name="title"] {
+  flex: 0.3;
+}
+
+.add_book input[name="author"] {
+  flex: 0.3;
+}
+
+.add_book button {
+  flex: 0.2;
+  padding: 8px 25px;
+  /* stylelint-disable-next-line color-hex-case */
+  background-color: #339AF0;
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  font-weight: 300;
+  border-radius: 2px;
+}

@@ -1,0 +1,13 @@
+.status {
+  padding: 8px 25px;
+  /* stylelint-disable-next-line color-hex-case */
+  background-color: #339AF0;
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  font-weight: 300;
+  border-radius: 2px;
+  margin: 20px;
+}

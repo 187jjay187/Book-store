@@ -1,0 +1,48 @@
+.navbar {
+  padding: 25px 50px;
+  border-bottom: 1px solid lightgray;
+}
+
+.navbar,
+.navbar ul {
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.navbar h1 {
+  font-size: 2rem;
+}
+
+.navbar ul {
+  flex: 1;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+.link {
+  text-decoration: none;
+  /* stylelint-disable-next-line color-hex-case */
+  color: #339AF0;
+}
+
+.navbar ul .link {
+  color: black;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border: 1px solid whitesmoke;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.avatar img {
+  width: 60%;
+}

@@ -1,0 +1,25 @@
+.list {
+  padding: 50px;
+}
+
+.error {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background-color: rgba(255, 0, 0, 0.4);
+  color: red;
+  border: 1px solid red;
+  border-radius: 2px;
+  padding: 10px 15px;
+  animation: animate 0.5s alternate;
+}
+
+@keyframes animate {
+  from {
+    bottom: -100px;
+  }
+
+  to {
+    bottom: 20px;
+  }
+}
