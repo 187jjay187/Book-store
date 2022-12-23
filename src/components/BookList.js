@@ -11,9 +11,6 @@ const BookList = () => {
   const fetchBooks = async (url) => {
     try {
       const res = await fetch(url);
-      if (res.status !== 200) {
-        throw new Error(`Failed to load books with status code: ${res.status}`);
-      }
       const data = await res.json();
       const booksData = Object.entries(data).map(([k, v]) => ({ id: k, ...v[0] }));
       return booksData;
@@ -25,13 +22,7 @@ const BookList = () => {
   useEffect(() => {
     dispatch(getBooks());
     fetchBooks(process.env.REACT_APP_BOOKS)
-      .then((data) => {
-        if (data instanceof Error) {
-          dispatch(setBooksError(data.message));
-        } else {
-          dispatch(setBooks(data));
-        }
-      })
+      .then((data) => dispatch(setBooks(data)))
       .catch((err) => dispatch(setBooksError(err.message)));
   }, [dispatch]);
 

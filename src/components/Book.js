@@ -5,7 +5,7 @@ import { removeBook, reqRemoveBook, removeBookError } from '../redux/books/books
 const Book = ({ id, title, author }) => {
   const dispatch = useDispatch();
   const { selected } = useSelector((state) => state.books, shallowEqual);
-  // create function to removebooks
+
   const handleClick = async () => {
     dispatch(reqRemoveBook(id));
     try {
@@ -16,14 +16,10 @@ const Book = ({ id, title, author }) => {
           'Content-Type': 'application/json',
         },
       });
-      if (res.status === 201) {
-        const data = await res.json();
-        dispatch(removeBook(data));
-      } else {
-        throw new Error(res.status);
-      }
-    } catch (error) {
-      dispatch(removeBookError(error.message));
+      await res.text();
+      dispatch(removeBook(id));
+    } catch (err) {
+      dispatch(removeBookError(err.message));
     }
   };
   return (
