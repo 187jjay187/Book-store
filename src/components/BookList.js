@@ -4,9 +4,10 @@ import NavBar from './NavBar';
 import Book from './Book';
 import AddBook from './AddBook';
 import { setBooks, setBooksError, getBooks } from '../redux/books/books';
+import styles from '../styling/BookList.module.css';
 // compare previous and current state value
 const BookList = () => {
-  const { books, load } = useSelector((state) => state.books, shallowEqual);
+  const { books, load, error } = useSelector((state) => state.books, shallowEqual);
   const dispatch = useDispatch();
   const fetchBooks = async (url) => {
     try {
@@ -27,15 +28,22 @@ const BookList = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="container">
       <NavBar />
-      <div>
+      <div className={styles.list}>
         {load ? 'loading...' : ''}
-        {books.map(({ id, title, author }) => (
-          <Book key={id} id={id} title={title} author={author} />
+        {books.map(({
+          id, title, author, category,
+        }) => (
+          <Book key={id} id={id} title={title} author={author} category={category} progress={50} />
         ))}
       </div>
       <AddBook />
+      {error ? (
+        <p className={styles.error}>
+          {error}
+        </p>
+      ) : null}
     </div>
   );
 };
